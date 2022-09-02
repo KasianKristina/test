@@ -1,12 +1,13 @@
+import { Menu } from 'ui/Menu'
+
+import { Content } from './Content-homepage'
 import styles from './styles.module.scss'
-import { Menu } from '../../ui/Menu/Menu'
-import { Content } from './Content-homepage/Content'
 
 export const Homepage = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.menu}><Menu /></div>
-            <div className={styles.content}><Content /></div>
+        <div className={styles.Homepage}>
+            <div className={styles.Homapage__menu}><Menu /></div>
+            <div className={styles.Homepage__content}><Content /></div>
         </div>
     )
 }

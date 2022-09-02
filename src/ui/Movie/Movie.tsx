@@ -1,12 +1,19 @@
-import '../../constants/constants';
-import styles from './styles.module.scss';
-import { API_IMG } from '../../constants/constants';
+import { FC } from 'react';
 
-export const Movie = ({title, poster_path, overview}: {title:string; poster_path:string; overview:string}) => {
+import { API_IMG } from 'constants/constants';
+
+import styles from './styles.module.scss';
+
+type MovieProps = {
+    title:string; 
+    poster_path:string
+}
+
+export const Movie: FC<MovieProps> = ({title, poster_path}) => {
     return (
-        <div className={styles.container}>
-            <img className={styles.poster} src={API_IMG+poster_path}></img>
-            <p className={styles.title}>{title}</p>
+        <div className={styles.Movie}>
+            <img className={styles.Movie__poster} src={API_IMG+poster_path}></img>
+            <p className={styles.Movie__title}>{title}</p>
         </div>
     )
 }

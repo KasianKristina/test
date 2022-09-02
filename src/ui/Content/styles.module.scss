@@ -1,10 +1,6 @@
-@import "../../global-styles/index.scss";
+@import "global-styles/index.scss";
 
-.container {
-    width: 100%;
-}
-
-.grid {
+.ContentFilms {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;

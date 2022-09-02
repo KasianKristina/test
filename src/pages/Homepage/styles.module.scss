@@ -1,12 +1,12 @@
-.container {
+.Homepage {
     display: grid;
     grid-template-columns: 320px auto;
-}
 
-.menu {
-    grid-column: 1;
-}
+    &__menu {
+        grid-column: 1;
+    }
 
-.content {
-    grid-column: auto;
+    &__content {
+        grid-column: auto;
+    }
 }

@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
-import { Homepage } from './pages/Homepage/Homepage'
+import { FC } from 'react'
 
-function App() {
+import { Homepage } from 'pages/Homepage'
+
+const App: FC = () => {
   return (
-    <div className="App">
+    <>
       <Homepage />
-    </div>
+    </>
   );
 }
 

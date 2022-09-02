@@ -1,10 +1,7 @@
-@import "../../global-styles/index.scss";
+@import "global-styles/index.scss";
 
 .main_container {
     width: 100%;
-}
-
-.grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
@@ -12,19 +9,19 @@
 }
 
 // movie cart
-.container {
+.Movie {
     background-color: var(--component-btn-hover);
     width: 150px;
     height: 300px;
-}
 
-.poster {
-    width: 150px;
-    height: 225px;
-}
+    &__poster {
+        width: 150px;
+        height: 225px;
+    }
 
-.title {
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--text-primary);
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--text-primary);
+    }
 }
