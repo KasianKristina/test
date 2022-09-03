@@ -1,0 +1,13 @@
+.Login {
+    display: grid;
+    grid-template-columns: 320px auto;
+
+    &__menu {
+        grid-column: 1;
+    }
+
+    &__content {
+        grid-column: auto;
+        background-color: var(--bg-main);
+    }
+}

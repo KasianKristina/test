@@ -20,6 +20,13 @@
 }
 
 @font-face {
+    font-family: 'Lato';
+    src: url('../../public/fonts/Lato-Light.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 300;
+}
+
+@font-face {
     font-family: 'Roboto';
     src: url('../../public/fonts/Roboto-Regular.ttf') format('truetype');
     font-display: swap;

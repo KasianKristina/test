@@ -1,12 +1,13 @@
 import { FC } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import { Homepage } from 'pages/Homepage'
+import { RootRouter } from 'rootRouter'
 
 const App: FC = () => {
   return (
-    <>
-      <Homepage />
-    </>
+    <Router>
+      <RootRouter />
+    </Router>
   );
 }
 

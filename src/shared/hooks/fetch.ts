@@ -19,3 +19,4 @@ export function useFetchMovies(url : string) {
 
     return result;
 }
+
