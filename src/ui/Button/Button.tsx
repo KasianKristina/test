@@ -7,7 +7,7 @@ type ButtonProps = {
     onPress?: (ev: React.MouseEvent) => void
 }
 
-export const Button: React.FC<ButtonProps> = ({ className, to, name, onPress }) => {
+export const Button: React.FC<ButtonProps> = ({ className, to, name, onPress}) => {
     if (to)
       return (
         <Link className={className} to={to} onMouseDown={(ev) => ev.preventDefault()}>{name}</Link>
@@ -15,6 +15,6 @@ export const Button: React.FC<ButtonProps> = ({ className, to, name, onPress }) 
     else
       return (
         <button className={className} onClick={onPress} onMouseDown={(ev) => ev.preventDefault()}></button>
-      )
+      ) 
 }
 

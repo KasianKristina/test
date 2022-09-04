@@ -26,22 +26,6 @@
     
         &-container {
             margin-bottom: 52px;
-
-            &_text {
-                color: var(--text-primary);
-                font-family: 'Lato';
-                font-weight: 700;
-                font-size: 20px;
-                margin-bottom: 8px;
-            }
-
-            &_input {
-                background-color: var(--component-btn-default);
-                border: 1px solid var(--text-primary);
-                border-radius: var(--border-radius-xxs);
-                height: 45px;
-                min-width: 349px;
-            }
         }
 
         &-btn {

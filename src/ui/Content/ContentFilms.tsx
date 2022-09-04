@@ -10,7 +10,7 @@ const url = DISCOVER+"?api_key="+API_KEY;
 
 export const ContentFilms: FC = () => {
   const data = useFetchMovies(url);
-
+  console.log(data)
   return (
     <div className={styles.ContentFilms}>
       {data.map((value) => 
