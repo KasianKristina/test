@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { API_IMG } from 'constants/constants';
-
 import styles from './styles.module.scss';
+
+const API_IMG = process.env.REACT_APP_API_IMG;
 
 type MovieProps = {
     title:string; 

@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import classnames from 'classnames'
 
-import { API_KEY } from 'constants/constants';
 import { MovieItem } from 'services';
 import { ContentFilms } from 'ui/Content'
 import { SearchCart } from 'ui/SearchCart';
 
 import styles from './styles.module.scss'
+import { apiRoute } from 'apiRoute';
+
+const API_KEY=process.env.REACT_APP_API_KEY;
 
 export const Content = () => {
+
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<MovieItem[]>([]);
 
@@ -16,10 +19,10 @@ export const Content = () => {
       e.preventDefault();
   
       setQuery(e.target.value);
+
+      const url = process.env.REACT_APP_API_ENDPOINT+apiRoute.searchMovie+'?api_key='+API_KEY+'&language=en-US&page=1&include_adult=false&query='+e.target.value;
   
-      fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-      )
+      fetch(url)
         .then((res) => res.json())
         .then((data) => {
           if (!data.errors) {

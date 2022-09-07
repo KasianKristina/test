@@ -1,9 +1,10 @@
 import { FC, useContext } from 'react'
 
-import { API_IMG } from 'constants/constants';
 import { GlobalContext } from 'context/GlobalContext';
 
 import styles from './styles.module.scss';
+
+const API_IMG = process.env.REACT_APP_API_IMG;
 
 type MovieProps = {
   id: number; 
