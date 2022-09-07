@@ -1,8 +1,7 @@
 import { useRoutes } from 'react-router'
 
-import { Homepage } from 'pages/Homepage'
-import { Login } from 'pages/Login'
 import { paths } from 'constants/path'
+import { Homepage, Login, Selections } from 'pages'
 
 export const RootRouter: React.FC = (): JSX.Element => {
     const routes = useRoutes([
@@ -13,6 +12,10 @@ export const RootRouter: React.FC = (): JSX.Element => {
       {
         path: paths.login,
         element: <Login />
+      },
+      {
+        path: paths.selections,
+        element: <Selections />
       }
     ])
   

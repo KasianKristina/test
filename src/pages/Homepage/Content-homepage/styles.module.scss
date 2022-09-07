@@ -36,7 +36,7 @@
         font-size: 40px;
         margin-bottom: 35px;
 
-        &_color_red {
+        &_colorRed {
             color: var(--text-logo);
         }
     }
@@ -47,14 +47,14 @@
         font-size: 20px;
         margin-bottom: 7px;
 
-        &_icon_vector {
+        &_iconVector {
             @include icon();
             &::after {
             content: url('/../public/icons/Vector.png');
             }
         }
 
-        &_icon_check {
+        &_iconCheck {
             @include icon();
             &::after {
             content: url('/../public/icons/check.png');

@@ -1,13 +1,16 @@
 import { FC } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-
 import { RootRouter } from 'rootRouter'
+
+import { GlobalProvider } from 'context/GlobalProvider'
 
 const App: FC = () => {
   return (
-    <Router>
-      <RootRouter />
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <RootRouter />
+      </Router>
+    </GlobalProvider>
   );
 }
 

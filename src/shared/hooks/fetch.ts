@@ -1,60 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import { MovieItem, Token } from 'services';
-import { SessionId } from 'services/session.model';
+import { MovieItem } from 'services';
 
-export function useFetchMovies(url : string) {
-    const [result, setResult] = useState<MovieItem[]>([]);
+export const useFetchMovies = () => {
+    const [movies, setMovies] = useState<MovieItem[]>([]);
     
-    useEffect(() => {
-      const api = async () => {
-        const data = await fetch(url, {
-          method: "GET"
-        });
-        const jsonData = await data.json();
-        setResult(jsonData.results);
-      };
-  
-      api();
-    }, []);
-
-  return result;
-}
-
-export function useFetchAuth(url : string) {
-  const [result, setResult] = useState<Token>();
-  
-  useEffect(() => {
-    const api = async () => {
-      const data = await fetch(url, {
-        method: "GET"
-      }).then(data => data.json()).then(result => setResult(result));
-      
+    const handleFetchMovies = async (url : string) => {
+      await fetch(url, {
+        method: 'GET',
+      }).then((data) => {
+        data.json().then((jsonData) => {
+          setMovies(jsonData.results);
+        })
+      })  
     };
-
-    api();
-  }, []);
-  
-  return result?.request_token;
-}
-
-export function useFetchAuthSession(url: string, request_token: string | undefined) {
-  const [result, setResult] = useState<SessionId>();
-  
-  useEffect(() => {
-    const api = async () => {
-      const data = await fetch(url, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(request_token)
-      }).then(data => data.json()).then(result => setResult(result));
-      
-    };
-
-    api();
-  }, []);
-  
-  return result?.session_id;
+  return {movies, handleFetchMovies};
 }
