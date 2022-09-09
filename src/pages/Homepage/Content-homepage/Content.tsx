@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, ChangeEventHandler, SetStateAction, useEffect, useState } from 'react';
 import classnames from 'classnames'
 
 import { MovieItem } from 'services';
@@ -15,12 +15,13 @@ export const Content = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<MovieItem[]>([]);
 
-    const onChange = (e: any) => {
+    const onChange = (e : ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
   
       setQuery(e.target.value);
 
-      const url = process.env.REACT_APP_API_ENDPOINT+apiRoute.searchMovie+'?api_key='+API_KEY+'&language=en-US&page=1&include_adult=false&query='+e.target.value;
+      const url = process.env.REACT_APP_API_ENDPOINT+apiRoute.searchMovie+'?api_key='+
+        API_KEY+'&language=en-US&page=1&include_adult=false&query='+e.target.value;
   
       fetch(url)
         .then((res) => res.json())
@@ -30,11 +31,11 @@ export const Content = () => {
           } else {
             setResults([]);
           }
-        });
+        });  
     };
-  
 
     return (
+      
         <div className={styles.Content}>
             <div className={styles.Content__info}>
                 <h1 className={styles['Content__info-watchlists']}>Welcome to <span className={styles['Content__info-watchlists_colorRed']}>Watchlists</span></h1>
@@ -47,12 +48,12 @@ export const Content = () => {
                 <input className={styles['input-box__input']} placeholder='Search for movies by title' type='search' value={query} onChange={onChange}></input>
                 <button className={styles['input-box__btn']}>search</button>
             </div>
-            {results.length > 0 && (
-            <ul className="results">
+            {Boolean(results.length) && (
+            <ul>
               {results.map((movie) => (
-                <li key={movie.id}>
+                < div key={movie.id}>
                   <SearchCart key={movie.id} {...movie}/>
-                </li>
+                </div>
               ))}
             </ul>
           )}

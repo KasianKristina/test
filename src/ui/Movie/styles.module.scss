@@ -29,9 +29,12 @@
         background-color: var(--component-btn-hover);
         border: none;
         &::after {
-            content: url('/../public/icons/Vector.png');
+            content: url('/../public/icons/Vector_2.png');
             vertical-align: middle;
             cursor: pointer;
+        }
+        &:disabled {
+            background-color: var(--component-btn-secondary);
         }
     }
 }

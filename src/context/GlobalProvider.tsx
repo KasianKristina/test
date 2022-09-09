@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect, FC, PropsWithChildren } from 'react';
 
 import { MovieItem } from 'services';
 
@@ -11,11 +11,11 @@ const INITIAL_STATE: MovieState = {
     watched: localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched') || '{}') :[]
 }
 
-type props = {
+type Props = {
     children: JSX.Element | JSX.Element[]
 }
 
-export const GlobalProvider = ({children} : props) => {
+export const GlobalProvider: FC<PropsWithChildren<Props>> = ({children}) => {
 
     const [state, dispatch] = useReducer( movieReducer, INITIAL_STATE);
 

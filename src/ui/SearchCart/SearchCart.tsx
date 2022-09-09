@@ -19,15 +19,17 @@ export const SearchCart: FC<MovieProps> = ({title, poster_path, id, overview, ge
 
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
-  let storedMovie = watchlist.find(i => i.id === id);
+  const storedMovie = watchlist.find(i => i.id === id);
 
   const watchlistDisabled = storedMovie ? true : false;
 
   return (
     <div className={styles.SearchCart}>
-        <img className={styles.Movie__poster} src={API_IMG+poster_path} width='50px'></img>
-        <p className={styles.Movie__title}>{title}</p>
-        <button className={styles.Movie__btn} disabled={watchlistDisabled} onClick={() => addMovieToWatchlist({title, id, overview, genres, popularity, poster_path})}>Add to watchlist</button>
+        <img className={styles.SearchCart__poster} src={API_IMG+poster_path}></img>
+        <div>
+          <p className={styles.SearchCart__title}>{title}</p>
+          <button className={styles.SearchCart__btn} disabled={watchlistDisabled} onClick={() => addMovieToWatchlist({title, id, overview, genres, popularity, poster_path})}>Add to watchlist</button>
+        </div>
     </div>
   )
 }

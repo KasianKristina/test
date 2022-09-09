@@ -1,24 +1,35 @@
 .SearchCart {
     background-color: var(--component-btn-hover);
+    display: flex;
 
     &__poster {
-        width: 50px;
-        height: 75px;
+        width: 70px;
+        height: 97px;
+        padding: 10px;
     }
 
     &__title {
         font-weight: 400;
         font-size: 16px;
         color: var(--text-primary);
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     &__btn {
-        background-color: var(--component-btn-hover);
+        background-color: var(--bg-secondary);
         border: none;
-        &::after {
-            content: url('/../public/icons/Vector.png');
+        border-radius: var(--border-radius-xxs);
+        font-family: 'Lato';
+        padding: 5px 5px 0px 5px;
+        cursor: pointer;
+        &:disabled {
+            background-color: var(--component-border-default);
+        }
+        &::before {
+            content: url('/../public/icons/Vector_2.png');
             vertical-align: middle;
-            cursor: pointer;
+            padding-right: 5px;
         }
     }
 }

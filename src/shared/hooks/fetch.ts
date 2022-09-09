@@ -16,3 +16,16 @@ export const useFetchMovies = () => {
     };
   return {movies, handleFetchMovies};
 }
+
+// export const useFetchSearchMovies = (url : string) => {
+//   const [movies, setMovies] = useState<MovieItem[]>([]);
+  
+//   fetch(url, {
+//       method: 'GET',
+//     }).then((data) => {
+//       data.json().then((jsonData) => {
+//         setMovies(jsonData.results);
+//       })
+//     })  
+// return movies;
+// }
