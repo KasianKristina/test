@@ -17,7 +17,7 @@ export const Menu: FC = () => {
                 </div>
                 <Button className={styles.Menu__btn_home} to={paths.home} name='Home'/>
                 <Button className={styles.Menu__btn_history} name='Selections' to={paths.selections}/>
-                <button className={styles.Menu__btn_create}>+ Create watchlist</button>
+                <Button className={styles.Menu__btn_create} name='+ Create watchlist' to={paths.create}/>
                 <div className={styles.Menu__line}></div>
                 <span className={styles.Menu__list}>My Lists</span>
             </div>

@@ -74,6 +74,8 @@
     
     &__btn_create {
         @include btn();
+        text-align: center;
+        padding-top: 10px;
         font-weight: 700;
         color: var(--text-btn);
         background-color: var(--component-btn-secondary);

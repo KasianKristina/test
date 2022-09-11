@@ -1,6 +1,8 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useState } from 'react';
 
 import { GlobalContext } from 'context/GlobalContext';
+import { Modal } from 'ui/Modal';
+import { ModalAddList } from 'ui/ModalAddList';
 
 import styles from './styles.module.scss';
 
@@ -18,16 +20,24 @@ type MovieProps = {
 export const Movie: FC<MovieProps> = ({title, poster_path, id, overview, popularity, genres}) => {
 
     const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
-
+    const [modalOpen, setModalOpen] = useState(false);
     const storedMovie = watchlist.find(i => i.id === id);
 
     const watchlistDisabled = storedMovie ? true : false;
-
+    
     return (
         <div className={styles.Movie}>
             <img className={styles.Movie__poster} src={API_IMG+poster_path}></img>
             <p className={styles.Movie__title}>{title}</p>
             <button className={styles.Movie__btn} disabled={watchlistDisabled} onClick={() => addMovieToWatchlist({title, id, overview, popularity, poster_path, genres})}></button>
+            <button className={styles.Movie__btn} disabled={watchlistDisabled} onClick={() => setModalOpen(true)}></button>
+            
+            <Modal modalOpen={modalOpen}>
+                <ModalAddList setModalOpen={setModalOpen}/>
+            </Modal>
+     
+            <button onClick={() => {setModalOpen(true); console.log('modal')}}>show Modal</button>
+            
         </div>
     )
 }
