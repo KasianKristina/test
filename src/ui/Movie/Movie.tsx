@@ -33,10 +33,10 @@ export const Movie: FC<MovieProps> = ({title, poster_path, id, overview, popular
             <button className={styles.Movie__btn} disabled={watchlistDisabled} onClick={() => setModalOpen(true)}></button>
             
             <Modal modalOpen={modalOpen}>
-                <ModalAddList setModalOpen={setModalOpen}/>
+                <ModalAddList setModalOpen={setModalOpen} title={title}/>
             </Modal>
      
-            <button onClick={() => {setModalOpen(true); console.log('modal')}}>show Modal</button>
+            <button onClick={() => setModalOpen(true)}>show Modal</button>
             
         </div>
     )

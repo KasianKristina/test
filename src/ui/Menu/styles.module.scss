@@ -94,6 +94,13 @@
         color: var(--text-secondary);
         font-size: 20px;
         text-align: left;
+
+        &Items {
+            font-family: 'Lato';
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
     }
     
     &__guest {

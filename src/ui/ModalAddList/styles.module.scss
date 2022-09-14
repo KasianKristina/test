@@ -32,4 +32,26 @@
             content: url('/../public/icons/Fill.png');
         }
     }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 247px;
+    }
+
+    &__listItems {
+        background-color: var(--component-btn-default);
+        border-radius: var(--border-radius-xs);
+        font-family: 'Lato';
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--text-primary);
+        height: 41px;
+        margin-bottom: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--component-btn-hover);
+        }
+    }
 }
