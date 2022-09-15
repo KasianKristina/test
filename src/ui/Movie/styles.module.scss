@@ -1,40 +1,39 @@
-@import "global-styles/index.scss";
+@import 'global-styles/index.scss';
 
 .main_container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
-    justify-content: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
 }
 
-// movie cart
 .Movie {
-    background-color: var(--component-btn-hover);
+  background-color: var(--component-btn-hover);
+  width: 150px;
+  height: 300px;
+
+  &__poster {
     width: 150px;
-    height: 300px;
+    height: 225px;
+  }
 
-    &__poster {
-        width: 150px;
-        height: 225px;
-    }
+  &__title {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-primary);
+  }
 
-    &__title {
-        font-weight: 400;
-        font-size: 16px;
-        color: var(--text-primary);
+  &__btn {
+    background-color: var(--component-btn-hover);
+    border: none;
+    &::after {
+      content: url('/../public/icons/Vector_2.png');
+      vertical-align: middle;
+      cursor: pointer;
     }
-
-    &__btn {
-        background-color: var(--component-btn-hover);
-        border: none;
-        &::after {
-            content: url('/../public/icons/Vector_2.png');
-            vertical-align: middle;
-            cursor: pointer;
-        }
-        &:disabled {
-            background-color: var(--component-btn-secondary);
-        }
+    &:disabled {
+      background-color: var(--component-btn-secondary);
     }
+  }
 }

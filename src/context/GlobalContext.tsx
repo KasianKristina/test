@@ -1,16 +1,16 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
-import { MovieItem } from "services";
+import { MovieItem } from 'services'
 
 export type MovieState = {
-    watchlist: MovieItem[],
-    watched: MovieItem[]
+  watchlist: MovieItem[]
+  watched: MovieItem[]
 }
 
 export type GlobalContextProps = {
-    watchlist: MovieItem[],
-    watched: MovieItem[],
-    addMovieToWatchlist: (movie: MovieItem) => void
+  watchlist: MovieItem[]
+  watched: MovieItem[]
+  addMovieToWatchlist: (movie: MovieItem) => void
 }
 
-export const GlobalContext = createContext<GlobalContextProps>({} as GlobalContextProps);
+export const GlobalContext = createContext<GlobalContextProps>({} as GlobalContextProps)

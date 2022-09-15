@@ -7,18 +7,18 @@ import { SelectionCart } from 'ui/SelectionCart'
 import styles from './styles.module.scss'
 
 export const Selections: FC = () => {
+  const { watchlist } = useContext(GlobalContext)
 
-    const {watchlist} = useContext(GlobalContext);
-
-    return (
-            <div className={styles.Selections}>
-                <div className={styles.Selections__menu}><Menu /></div>
-                <div>
-                    {watchlist.map((movie) => (
-                        <SelectionCart key={movie.id} {...movie} type='watchlist'/>
-                    ))}
-                </div>
-            </div>
-       
-    )
+  return (
+    <div className={styles.Selections}>
+      <div className={styles.Selections__menu}>
+        <Menu />
+      </div>
+      <div>
+        {watchlist.map((movie) => (
+          <SelectionCart key={movie.id} {...movie} type="watchlist" />
+        ))}
+      </div>
+    </div>
+  )
 }

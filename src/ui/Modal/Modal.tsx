@@ -1,28 +1,28 @@
-import { FC, PropsWithChildren, useEffect, useRef} from 'react';
-import { createPortal } from 'react-dom';
+import { FC, PropsWithChildren, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 
-const modalRoot = document.getElementById('modal-container');
+const modalRoot = document.getElementById('modal-container')
 
 type Props = {
-  modalOpen: boolean;
+  modalOpen: boolean
 }
 
-export const Modal: FC<PropsWithChildren<Props>> = ({modalOpen, children}) => {
+export const Modal: FC<PropsWithChildren<Props>> = ({ modalOpen, children }) => {
 
-  const el = useRef(document.createElement("div"));
+  const el = useRef(document.createElement('div'))
 
   useEffect(() => {
-    const current = el.current;
+    const current = el.current
 
-    modalRoot!.appendChild(current);
-    return () => void modalRoot!.removeChild(current);
-  }, []);
+    modalRoot!.appendChild(current)
+    return () => void modalRoot!.removeChild(current)
+  }, [])
 
-  if (!modalOpen) return null;
+  if (!modalOpen) return null
 
-  return createPortal (
+  return createPortal(
     <div className={styles.Modal}>
       <div className={styles.Modal__card}>
         <div>{children}</div>

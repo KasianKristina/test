@@ -1,19 +1,23 @@
-import { createContext } from "react";
-import { MovieItem } from "services";
+import { createContext } from 'react'
+
+import { MovieItem } from 'services'
 
 export type MovieList = {
-    title: string 
-    overview: string
-    movies: MovieItem[]
+  title: string
+  overview: string
+  movies: MovieItem[]
 }
 
 export type MovieListState = {
-    list: MovieList[]
+  list: MovieList[]
 }
 
 export type MovieListContextProps = {
-    list: MovieList[]
-    addList: (movie: MovieList) => void
+  list: MovieList[]
+  addList: (movie: MovieList) => void
+  addMovieToWatchlist: (movie: MovieItem) => void
 }
 
-export const MovieListContext = createContext<MovieListContextProps>({} as MovieListContextProps);
+export const MovieListContext = createContext<MovieListContextProps>(
+  {} as MovieListContextProps
+)

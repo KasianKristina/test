@@ -1,12 +1,12 @@
 .Homepage {
-    display: grid;
-    grid-template-columns: 320px auto;
+  display: grid;
+  grid-template-columns: 320px auto;
 
-    &__menu {
-        grid-column: 1;
-    }
+  &__menu {
+    grid-column: 1;
+  }
 
-    &__content {
-        grid-column: auto;
-    }
+  &__content {
+    grid-column: auto;
+  }
 }

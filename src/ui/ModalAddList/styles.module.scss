@@ -1,57 +1,57 @@
 .ModalAddList {
-    &__text {
-        font-family: 'Lato';
-        font-weight: 700;
-        font-size: 16px;
-        color: var(--text-primary);
-    }
+  &__text {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-primary);
+  }
 
-    &__btnNewWatchlist {
-        background-color: var(--component-btn-secondary);
-        border-radius: var(--border-radius-xs);
-        border: none;
-        font-family: 'Lato';
-        font-weight: 700;
-        font-size: 16px;
-        color: var(--text-btn);
-        min-width: 247px;
-        height: 41px;
-        cursor: pointer;
-        text-decoration: none;
-        text-align: center;
-        &:hover {
-            background-color: var(--component-btn-secondary-hover);
-        }
+  &__btnNewWatchlist {
+    background-color: var(--component-btn-secondary);
+    border-radius: var(--border-radius-xs);
+    border: none;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-btn);
+    min-width: 247px;
+    height: 41px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+      background-color: var(--component-btn-secondary-hover);
     }
+  }
 
-    &__btnClose {
-        background-color: var(--component-modal);
-        border: none;
-        float: right;
-        &::after {
-            content: url('/../public/icons/Fill.png');
-        }
+  &__btnClose {
+    background-color: var(--component-modal);
+    border: none;
+    float: right;
+    &::after {
+      content: url('/../public/icons/Fill.png');
     }
+  }
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-        width: 247px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 247px;
+  }
+
+  &__listItems {
+    background-color: var(--component-btn-default);
+    border-radius: var(--border-radius-xs);
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-primary);
+    height: 41px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--component-btn-hover);
     }
-
-    &__listItems {
-        background-color: var(--component-btn-default);
-        border-radius: var(--border-radius-xs);
-        font-family: 'Lato';
-        font-weight: 400;
-        font-size: 16px;
-        color: var(--text-primary);
-        height: 41px;
-        margin-bottom: 5px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--component-btn-hover);
-        }
-    }
+  }
 }

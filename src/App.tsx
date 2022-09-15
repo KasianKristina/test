@@ -8,13 +8,13 @@ import { MovieListProvider } from 'context/MovieListContext/MovieListProvider'
 const App: FC = () => {
   return (
     <GlobalProvider>
-    <MovieListProvider>
-      <Router>
-        <RootRouter />
-      </Router>
+      <MovieListProvider>
+        <Router>
+          <RootRouter />
+        </Router>
       </MovieListProvider>
     </GlobalProvider>
-  );
+  )
 }
 
-export default App;
+export default App

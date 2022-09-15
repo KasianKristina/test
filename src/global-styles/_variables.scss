@@ -1,29 +1,29 @@
 :root {
-    // text colors
-    --text-logo: #F33F3F;
-    --text-primary: #E1E1E1;
-    --text-secondary: #9A9A9A;
-    --text-btn: #141414;
-    --text-search: #000;
-    --text-placeholder: rgba(217, 217, 217, 0.3);
-  
-    // components color
-    --component-border-default: rgba(217, 217, 217, 0.3);
-    --component-border-guest: #E1E1E1;
-    --component-border-info: #A41B1B;
-    --component-btn-default: #000000;
-    --component-btn-hover: #1F1F1F;
-    --component-btn-secondary: #F33F3F;
-    --component-btn-secondary-hover: #ECBFC0;
-    --component-modal: #161616;
-  
-    // background and stroke
-    --bg-main: rgba(255, 255, 255, 0.1);
-    --bg-menu: #000000;
-    --bg-secondary: rgba(217, 217, 217, 0.1);
-  
-    // border radiuses
-    --border-radius-xxs: 4px;
-    --border-radius-xs: 6px;
-    --border-radius-s: 8px;
+  // text colors
+  --text-logo: #f33f3f;
+  --text-primary: #e1e1e1;
+  --text-secondary: #9a9a9a;
+  --text-btn: #141414;
+  --text-search: #000;
+  --text-placeholder: rgba(217, 217, 217, 0.3);
+
+  // components color
+  --component-border-default: rgba(217, 217, 217, 0.3);
+  --component-border-guest: #e1e1e1;
+  --component-border-info: #a41b1b;
+  --component-btn-default: #000000;
+  --component-btn-hover: #1f1f1f;
+  --component-btn-secondary: #f33f3f;
+  --component-btn-secondary-hover: #ecbfc0;
+  --component-modal: #161616;
+
+  // background and stroke
+  --bg-main: rgba(255, 255, 255, 0.1);
+  --bg-menu: #000000;
+  --bg-secondary: rgba(217, 217, 217, 0.1);
+
+  // border radiuses
+  --border-radius-xxs: 4px;
+  --border-radius-xs: 6px;
+  --border-radius-s: 8px;
 }

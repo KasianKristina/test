@@ -1,22 +1,22 @@
 .SelectionCart {
-    background-color: var(--component-btn-hover);
-    display: flex;
+  background-color: var(--component-btn-hover);
+  display: flex;
 
-    &__poster {
-        width: 200px;
-        height: 320px;
-        margin: 30px;
-    }
+  &__poster {
+    width: 200px;
+    height: 320px;
+    margin: 30px;
+  }
 
-    &__title {
-        font-family: 'Lato';
-        font-size: 28px;
-        font-weight: 400;
-        margin: 30px 0px;
-    }
+  &__title {
+    font-family: 'Lato';
+    font-size: 28px;
+    font-weight: 400;
+    margin: 30px 0px;
+  }
 
-    &__overview {
-        font-family: 'Lato';
-        font-weight: 300;
-    }
+  &__overview {
+    font-family: 'Lato';
+    font-weight: 300;
+  }
 }

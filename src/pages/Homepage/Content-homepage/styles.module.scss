@@ -1,122 +1,121 @@
-@import "global-styles/index.scss";
+@import 'global-styles/index.scss';
 
 @mixin icon() {
-    &::after {
-        padding: 0px 10px;
-        vertical-align: middle;
-    }
+  &::after {
+    padding: 0px 10px;
+    vertical-align: middle;
+  }
 }
 
 @mixin font-parametrs() {
-    font-family: 'Lato';
-    font-weight: 400;
-    font-size: 16px;
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .Content {
-    height: 100%;
-    background-color: var(--bg-main);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 50px 60px 0px 60px;
+  height: 100%;
+  background-color: var(--bg-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 60px 0px 60px;
 
-    &__info {
-        display: inline-block;
-        background-color: var(--bg-secondary);
-        padding: 20px;
-        border: 1px solid var(--component-border-info);
-        border-radius: var(--border-radius-s);
-        margin-bottom: 40px;
+  &__info {
+    display: inline-block;
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border: 1px solid var(--component-border-info);
+    border-radius: var(--border-radius-s);
+    margin-bottom: 40px;
+  }
+
+  &__info-watchlists {
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 35px;
+
+    &_colorRed {
+      color: var(--text-logo);
+    }
+  }
+
+  &__text {
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 7px;
+
+    &_iconVector {
+      @include icon();
+      &::after {
+        content: url('/../public/icons/Vector.png');
+      }
     }
 
-    &__info-watchlists {
-        color: var(--text-primary);
-        font-weight: 400;
-        font-size: 40px;
-        margin-bottom: 35px;
-
-        &_colorRed {
-            color: var(--text-logo);
-        }
+    &_iconCheck {
+      @include icon();
+      &::after {
+        content: url('/../public/icons/check.png');
+      }
     }
+  }
 
-    &__text {
-        color: var(--text-primary);
-        font-weight: 400;
-        font-size: 20px;
-        margin-bottom: 7px;
-
-        &_iconVector {
-            @include icon();
-            &::after {
-            content: url('/../public/icons/Vector.png');
-            }
-        }
-
-        &_iconCheck {
-            @include icon();
-            &::after {
-            content: url('/../public/icons/check.png');
-            }
-        }
-    }
-
-    &__input-box {
-        position: relative;
-        width: 100%;
-        height: 45px;
-        
-    }
+  &__input-box {
+    position: relative;
+    width: 100%;
+    height: 45px;
+  }
 }
 
 .input-box {
+  background-color: var(--component-btn-default);
+  border-radius: var(--border-radius-xs);
+  border: 1px solid var(--component-border-default);
+
+  &::before {
+    content: url('/../public/icons/search.png');
+    margin: 0px 10px;
+    vertical-align: middle;
+  }
+
+  &__input {
+    @include font-parametrs();
     background-color: var(--component-btn-default);
+    border: none;
+    color: var(--text-placeholder);
+    height: 43px;
+    width: 90%;
+    outline: none;
+  }
+
+  &__btn {
+    @include font-parametrs();
+    background-color: var(--component-btn-secondary);
+    border: none;
     border-radius: var(--border-radius-xs);
-    border: 1px solid var(--component-border-default);
-
-    &::before {
-        content: url('/../public/icons/search.png');
-        margin: 0px 10px;
-        vertical-align: middle;
-    }
-
-    &__input {
-        @include font-parametrs();
-        background-color: var(--component-btn-default);
-        border: none;
-        color: var(--text-placeholder);
-        height: 43px;
-        width: 90%;
-        outline: none;
-    }
-
-    &__btn {
-        @include font-parametrs();
-        background-color: var(--component-btn-secondary);
-        border: none;
-        border-radius: var(--border-radius-xs);
-        height: 43px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        min-width: 91px;
-        color: var(--text-search);
-        cursor: pointer;
-    }
+    height: 43px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 91px;
+    color: var(--text-search);
+    cursor: pointer;
+  }
 }
 
 .posters {
-    font-family: 'Lato';
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  font-family: 'Lato';
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    &-text {
-        font-size: 32px;
-        color: var(--text-primary);
-        margin-bottom: 35px;
-        margin-top: 40px;
-    }
+  &-text {
+    font-size: 32px;
+    color: var(--text-primary);
+    margin-bottom: 35px;
+    margin-top: 40px;
+  }
 }

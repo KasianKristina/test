@@ -1,8 +1,8 @@
-@import "global-styles/index.scss";
+@import 'global-styles/index.scss';
 
 .ContentFilms {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
 }
