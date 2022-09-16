@@ -16,6 +16,7 @@ export type MovieListContextProps = {
   list: MovieList[]
   addList: (movie: MovieList) => void
   addMovieToWatchlist: (movie: MovieItem) => void
+  addMovie: (movie: MovieItem, name: string) => void
 }
 
 export const MovieListContext = createContext<MovieListContextProps>(

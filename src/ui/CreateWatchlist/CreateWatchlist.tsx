@@ -6,8 +6,9 @@ import { MovieListContext } from 'context/MovieListContext/MovieListContext'
 import styles from './styles.module.scss'
 
 export const CreateWatchlist: FC = () => {
-  
-  const { addList, list } = useContext(MovieListContext)
+
+  const { addList, list, addMovie } = useContext(MovieListContext)
+
   const [title, setTitle] = useState('')
   const [overview, setOverview] = useState('')
   const [movies, setMovies] = useState([])
@@ -38,7 +39,10 @@ export const CreateWatchlist: FC = () => {
       </div>
       <button
         className={styles.CreateWatchlist__btn}
-        onClick={() => addList({ title, overview, movies })}
+        onClick={() => {
+          addList({ title, overview, movies })
+          addMovie(movies[0], 'asd')
+        }}
       >
         Create Watchlist
       </button>

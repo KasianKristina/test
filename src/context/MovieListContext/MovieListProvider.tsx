@@ -26,12 +26,16 @@ export const MovieListProvider: FC<PropsWithChildren<Props>> = ({ children }) =>
     dispatch({ type: 'ADD_LIST', payload: list })
   }
 
+  const addMovie = (movie: MovieItem, name: string) => {
+    dispatch({ type: 'ADD_MOVIE', payload: { movie, name } })
+  }
+
   const addMovieToWatchlist = (movie: MovieItem) => {
     dispatch({ type: 'ADD_MOVIE_TO_WATCHLIST', payload: movie })
   }
 
   return (
-    <MovieListContext.Provider value={{ list: state.list, addList, addMovieToWatchlist }}>
+    <MovieListContext.Provider value={{ list: state.list, addList, addMovieToWatchlist, addMovie }}>
       {children}
     </MovieListContext.Provider>
   )

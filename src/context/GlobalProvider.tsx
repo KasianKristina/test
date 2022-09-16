@@ -14,11 +14,7 @@ const INITIAL_STATE: MovieState = {
     : []
 }
 
-type Props = {
-  children: JSX.Element | JSX.Element[]
-}
-
-export const GlobalProvider: FC<PropsWithChildren<Props>> = ({ children }) => {
+export const GlobalProvider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(movieReducer, INITIAL_STATE)
 
   useEffect(() => {
