@@ -17,7 +17,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "scss": "node-sass -watch scss -o css",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "prettier": "prettier --write src",
+    "check-all": "npm run prettier && npm run lint"
   },
   "eslintConfig": {
     "extends": [

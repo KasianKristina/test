@@ -7,6 +7,7 @@ import { SearchCart } from 'ui/SearchCart'
 import { apiRoute } from 'apiRoute'
 
 import styles from './styles.module.scss'
+import { useFetch } from 'shared/hooks/myFetch'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -14,28 +15,11 @@ export const Content = () => {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<MovieItem[]>([])
 
+  const { get, error, isLoading, result } = useFetch<MovieItem[]>()
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-
-    setQuery(e.target.value)
-
-    const url =
-      process.env.REACT_APP_API_ENDPOINT +
-      apiRoute.searchMovie +
-      '?api_key=' +
-      API_KEY +
-      '&language=en-US&page=1&include_adult=false&query=' +
-      e.target.value
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.errors) {
-          setResults(data.results)
-        } else {
-          setResults([])
-        }
-      })
+    get(process.env.REACT_APP_API_ENDPOINT + apiRoute.searchMovie + '?api_key=' + API_KEY + '&language=en-US&page=1&include_adult=false&query=')
   }
 
   return (

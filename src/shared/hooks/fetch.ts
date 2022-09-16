@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { MovieItem } from 'services'
 
 export const useFetchMovies = () => {
-  
+
   const [movies, setMovies] = useState<MovieItem[]>([])
 
   const handleFetchMovies = async (url: string) => {
