@@ -1,19 +1,26 @@
 import { FC } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { RootRouter } from 'rootRouter'
 
-import { GlobalProvider } from 'context/GlobalProvider'
+import { RootRouter } from 'rootRouter'
 import { MovieListProvider } from 'context/MovieListContext/MovieListProvider'
+import { Menu } from 'ui/Menu'
+
+import './App.css'
 
 const App: FC = () => {
   return (
-    <GlobalProvider>
-      <MovieListProvider>
-        <Router>
-          <RootRouter />
-        </Router>
-      </MovieListProvider>
-    </GlobalProvider>
+    <MovieListProvider>
+      <Router>
+        <div className="Main">
+          <div className="Menu">
+            <Menu />
+          </div>
+          <div className="Content">
+            <RootRouter />
+          </div>
+        </div>
+      </Router>
+    </MovieListProvider>
   )
 }
 

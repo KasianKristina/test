@@ -10,7 +10,6 @@ type Props = {
 }
 
 export const Modal: FC<PropsWithChildren<Props>> = ({ modalOpen, children }) => {
-
   const el = useRef(document.createElement('div'))
 
   useEffect(() => {

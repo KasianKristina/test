@@ -1,6 +1,10 @@
 .CreateWatchlist {
   height: 100vh;
-  margin: 40px;
+  background-color: var(--bg-main);
+
+  &__wrapper {
+    padding: 40px;
+  }
 
   &__header {
     font-family: 'Lato';

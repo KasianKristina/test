@@ -1,6 +1,7 @@
-import { FC, useContext } from 'react'
+import { FC, memo, useState } from 'react'
 
-import { GlobalContext } from 'context/GlobalContext'
+import { Modal } from 'ui/Modal'
+import { ModalAddList } from 'ui/ModalAddList'
 
 import styles from './styles.module.scss'
 
@@ -15,39 +16,29 @@ type MovieProps = {
   poster_path: string
 }
 
-export const SearchCart: FC<MovieProps> = ({
-  title,
-  poster_path,
-  id,
-  overview,
-  genres,
-  popularity
-}) => {
-  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext)
-
-  const storedMovie = watchlist.find((i) => i.id === id)
-
-  const watchlistDisabled = storedMovie ? true : false
+export const SearchCart: FC<MovieProps> = memo(function ({ title, poster_path, id, overview, genres, popularity }) {
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <div className={styles.SearchCart}>
-      <img
-        className={styles.SearchCart__poster}
-        src={API_IMG + poster_path}
-        alt="Movie poster"
-      ></img>
+      <img className={styles.SearchCart__poster} src={API_IMG + poster_path} alt="Movie poster"></img>
       <div>
         <p className={styles.SearchCart__title}>{title}</p>
-        <button
-          className={styles.SearchCart__btn}
-          disabled={watchlistDisabled}
-          onClick={() =>
-            addMovieToWatchlist({ title, id, overview, genres, popularity, poster_path })
-          }
-        >
+        <button className={styles.SearchCart__btn} onClick={() => setModalOpen(true)}>
           Add to watchlist
         </button>
+        <Modal modalOpen={modalOpen}>
+          <ModalAddList
+            setModalOpen={setModalOpen}
+            title={title}
+            poster_path={poster_path}
+            id={id}
+            overview={overview}
+            popularity={popularity}
+            genres={genres}
+          />
+        </Modal>
       </div>
     </div>
   )
-}
+})

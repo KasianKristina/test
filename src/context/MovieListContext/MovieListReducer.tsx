@@ -6,16 +6,16 @@ type ListState = {
   list: MovieList[]
 }
 
-type AddMovieProps = {
+type MovieProps = {
   movie: MovieItem
   name: string
 }
 
 type ListAction =
   | { type: 'ADD_LIST'; payload: MovieList }
-  | { type: 'ADD_MOVIE'; payload: AddMovieProps }
-  | { type: 'DELETE_LIST'; payload: { id: string } }
-  | { type: 'ADD_MOVIE_TO_WATCHLIST'; payload: MovieItem }
+  | { type: 'ADD_MOVIE_TO_WATCHLIST'; payload: MovieProps }
+  | { type: 'DELETE_MOVIE_FROM_WATCHLIST'; payload: MovieProps }
+  | { type: 'DELETE_LIST'; payload: string }
 
 export const listReducer = (state: ListState, action: ListAction) => {
   switch (action.type) {
@@ -24,25 +24,41 @@ export const listReducer = (state: ListState, action: ListAction) => {
         ...state,
         list: [action.payload, ...state.list]
       }
+
     case 'ADD_MOVIE_TO_WATCHLIST':
-      return {
-        ...state,
-        movies: [action.payload, ...state.list]
-      }
-    case 'ADD_MOVIE':
       const name = action.payload.name
       const newState: MovieList[] = state.list.reduce((prev, cur) => {
         if (cur.title === name) {
-          cur.movies.push(action.payload.movie)
+          cur.watchlist.push(action.payload.movie)
         }
-
-        return { ...prev, cur }
+        return { ...prev, ...cur }
       }, [])
-
       return {
         ...state,
-        list: [...newState]
+        movie: newState
       }
+
+    case 'DELETE_MOVIE_FROM_WATCHLIST':
+      const titleList = action.payload.name
+      const titleMovie = action.payload.movie.title
+      const newStateList: MovieList[] = state.list.reduce((prev, cur) => {
+        if (cur.title === titleList) {
+          const index = cur.watchlist.findIndex((el) => el.title === titleMovie)
+          cur.watchlist.splice(index, 1)
+        }
+        return { ...prev, ...cur }
+      }, [])
+      return {
+        ...state,
+        movie: newStateList
+      }
+
+    case 'DELETE_LIST':
+      return {
+        ...state,
+        list: state.list.filter((item) => item.title !== action.payload)
+      }
+
     default:
       return state
   }

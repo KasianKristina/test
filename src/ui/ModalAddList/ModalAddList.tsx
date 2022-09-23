@@ -14,45 +14,26 @@ type Props = {
   genres: string
 }
 
-export const ModalAddList: FC<Props> = ({
-  setModalOpen,
-  title,
-  poster_path,
-  id,
-  overview,
-  popularity,
-  genres
-}) => {
-  const { list, addMovieToWatchlist } = useContext(MovieListContext)
+export const ModalAddList: FC<Props> = ({ setModalOpen, title, poster_path, id, overview, popularity, genres }) => {
+  const { list, addMovie } = useContext(MovieListContext)
 
   return (
     <div className={styles.ModalAddList}>
-      <button
-        className={styles.ModalAddList__btnClose}
-        onClick={() => setModalOpen(false)}
-      ></button>
+      <button className={styles.ModalAddList__btnClose} onClick={() => setModalOpen(false)}></button>
       <p className={styles.ModalAddList__text}>Add movie: {title}</p>
       <p className={styles.ModalAddList__text}>To watchlist</p>
       <div className={styles.ModalAddList__list}>
-        {list.map((selection) => (
+        {Array.from(list).map((selection) => (
           <button
             className={styles.ModalAddList__listItems}
-            onClick={() =>
-              addMovieToWatchlist({
-                id,
-                title,
-                overview,
-                popularity,
-                poster_path,
-                genres
-              })
-            }
+            onClick={() => {
+              addMovie({ title, id, overview, popularity, poster_path, genres }, selection.title)
+            }}
           >
             {selection.title}
           </button>
         ))}
       </div>
-      <button className={styles.ModalAddList__btnNewWatchlist}>+ New watchlist</button>
     </div>
   )
 }

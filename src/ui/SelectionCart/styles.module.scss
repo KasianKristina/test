@@ -1,22 +1,41 @@
 .SelectionCart {
-  background-color: var(--component-btn-hover);
+  
   display: flex;
 
   &__poster {
     width: 200px;
     height: 320px;
-    margin: 30px;
+    margin: 30px 30px 0px 0px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 240px;
   }
 
   &__title {
     font-family: 'Lato';
     font-size: 28px;
     font-weight: 400;
-    margin: 30px 0px;
+    margin: 30px 0px 0px 0px;
   }
 
   &__overview {
     font-family: 'Lato';
     font-weight: 300;
+  }
+
+  &__btn_remove {
+    width: 77px;
+    height: 41px;
+    border: 1px solid var(--component-btn-secondary);
+    border-radius: var(--border-radius-xxs);
+    background-color: var(--component-btn-remove);
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-primary);
   }
 }

@@ -1,6 +1,5 @@
-import { FC, useContext, useState } from 'react'
+import { FC, useState, memo } from 'react'
 
-import { GlobalContext } from 'context/GlobalContext'
 import { Modal } from 'ui/Modal'
 import { ModalAddList } from 'ui/ModalAddList'
 
@@ -17,40 +16,16 @@ type MovieProps = {
   genres: string
 }
 
-export const Movie: FC<MovieProps> = ({
-  title,
-  poster_path,
-  id,
-  overview,
-  popularity,
-  genres
-}) => {
-  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext)
+export const Movie: FC<MovieProps> = memo(function ({ title, poster_path, id, overview, popularity, genres }) {
   const [modalOpen, setModalOpen] = useState(false)
-  const storedMovie = watchlist.find((i) => i.id === id)
-
-  const watchlistDisabled = storedMovie ? true : false
 
   return (
     <div className={styles.Movie}>
-      <img
-        className={styles.Movie__poster}
-        src={API_IMG + poster_path}
-        alt="Movie poster"
-      ></img>
+      <img className={styles.Movie__poster} src={API_IMG + poster_path} alt="Movie poster"></img>
       <p className={styles.Movie__title}>{title}</p>
-      <button
-        className={styles.Movie__btn}
-        disabled={watchlistDisabled}
-        onClick={() =>
-          addMovieToWatchlist({ title, id, overview, popularity, poster_path, genres })
-        }
-      ></button>
-      <button
-        className={styles.Movie__btn}
-        disabled={watchlistDisabled}
-        onClick={() => setModalOpen(true)}
-      ></button>
+      <button className={styles.Movie__btn} onClick={() => setModalOpen(true)}>
+        Add
+      </button>
 
       <Modal modalOpen={modalOpen}>
         <ModalAddList
@@ -63,8 +38,6 @@ export const Movie: FC<MovieProps> = ({
           genres={genres}
         />
       </Modal>
-
-      <button onClick={() => setModalOpen(true)}>show Modal</button>
     </div>
   )
-}
+})

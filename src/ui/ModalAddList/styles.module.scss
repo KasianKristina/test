@@ -1,27 +1,13 @@
 .ModalAddList {
+
+  margin: 15px 25px 0px 25px;
+
   &__text {
     font-family: 'Lato';
     font-weight: 700;
     font-size: 16px;
     color: var(--text-primary);
-  }
-
-  &__btnNewWatchlist {
-    background-color: var(--component-btn-secondary);
-    border-radius: var(--border-radius-xs);
-    border: none;
-    font-family: 'Lato';
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--text-btn);
-    min-width: 247px;
-    height: 41px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    &:hover {
-      background-color: var(--component-btn-secondary-hover);
-    }
+    margin-bottom: 10px;
   }
 
   &__btnClose {
@@ -49,7 +35,7 @@
     height: 41px;
     margin-bottom: 5px;
     cursor: pointer;
-
+  
     &:hover {
       background-color: var(--component-btn-hover);
     }

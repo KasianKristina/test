@@ -1,21 +1,14 @@
 @import 'global-styles/index.scss';
 
-.main_container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
-  justify-content: center;
-}
-
 .Movie {
   background-color: var(--component-btn-hover);
-  width: 150px;
-  height: 300px;
+  margin: 15px 12px;
+  width: 170px;
+  height: 330px;
 
   &__poster {
-    width: 150px;
-    height: 225px;
+    width: 170px;
+    height: 255px;
   }
 
   &__title {
@@ -27,13 +20,12 @@
   &__btn {
     background-color: var(--component-btn-hover);
     border: none;
-    &::after {
+    padding: 5px 5px 0px 5px;
+    &::before {
       content: url('/../public/icons/Vector_2.png');
       vertical-align: middle;
       cursor: pointer;
-    }
-    &:disabled {
-      background-color: var(--component-btn-secondary);
+      padding-right: 7px;
     }
   }
 }

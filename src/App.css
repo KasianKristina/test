@@ -1,1 +1,11 @@
+.Main {
+  display: flex;
+}
 
+.Menu {
+  flex: 1 0 200px;
+}
+
+.Content {
+  flex: 10 0 300px;
+}

@@ -5,7 +5,7 @@ import { MovieItem } from 'services'
 export type MovieList = {
   title: string
   overview: string
-  movies: MovieItem[]
+  watchlist: MovieItem[]
 }
 
 export type MovieListState = {
@@ -15,10 +15,9 @@ export type MovieListState = {
 export type MovieListContextProps = {
   list: MovieList[]
   addList: (movie: MovieList) => void
-  addMovieToWatchlist: (movie: MovieItem) => void
   addMovie: (movie: MovieItem, name: string) => void
+  deleteMovieFromWatchlist: (movie: MovieItem, name: string) => void
+  deleteWatchlist: (name: string) => void
 }
 
-export const MovieListContext = createContext<MovieListContextProps>(
-  {} as MovieListContextProps
-)
+export const MovieListContext = createContext<MovieListContextProps>({} as MovieListContextProps)
