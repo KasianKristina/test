@@ -10,13 +10,14 @@ type Props = {
 }
 
 export const Modal: FC<PropsWithChildren<Props>> = ({ modalOpen, children }) => {
-  const el = useRef(document.createElement('div'))
+  const element = useRef(document.createElement('div'))
 
   useEffect(() => {
-    const current = el.current
+    const current = element.current
 
     modalRoot!.appendChild(current)
-    return () => void modalRoot!.removeChild(current)
+    return () => void 
+    modalRoot!.removeChild(current)
   }, [])
 
   if (!modalOpen) return null
@@ -27,6 +28,6 @@ export const Modal: FC<PropsWithChildren<Props>> = ({ modalOpen, children }) => 
         <div>{children}</div>
       </div>
     </div>,
-    el.current
+    element.current
   )
 }

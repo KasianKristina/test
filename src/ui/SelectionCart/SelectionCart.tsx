@@ -17,7 +17,7 @@ type MovieProps = {
   listTitle: string
 }
 
-export const SelectionCart: FC<MovieProps> = memo(function ({
+const _SelectionCart: FC<MovieProps> = ({
   id,
   title,
   poster_path,
@@ -26,7 +26,7 @@ export const SelectionCart: FC<MovieProps> = memo(function ({
   popularity,
   type,
   listTitle
-}) {
+}) => {
   const { deleteMovieFromWatchlist } = useContext(MovieListContext)
   return (
     <div className={styles.SelectionCart}>
@@ -46,4 +46,6 @@ export const SelectionCart: FC<MovieProps> = memo(function ({
       </div>
     </div>
   )
-})
+}
+
+export const SelectionCart = memo(_SelectionCart)

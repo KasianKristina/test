@@ -9,11 +9,11 @@ export type MovieList = {
 }
 
 export type MovieListState = {
-  list: MovieList[]
+  movieList: MovieList[]
 }
 
 export type MovieListContextProps = {
-  list: MovieList[]
+  movieList: MovieList[]
   addList: (movie: MovieList) => void
   addMovie: (movie: MovieItem, name: string) => void
   deleteMovieFromWatchlist: (movie: MovieItem, name: string) => void

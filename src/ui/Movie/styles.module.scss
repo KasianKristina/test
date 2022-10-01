@@ -1,10 +1,11 @@
 @import 'global-styles/index.scss';
 
 .Movie {
-  background-color: var(--component-btn-hover);
-  margin: 15px 12px;
   width: 170px;
   height: 330px;
+  margin: 15px 12px;
+
+  background-color: var(--component-btn-hover);
 
   &__poster {
     width: 170px;
@@ -12,19 +13,18 @@
   }
 
   &__title {
+    color: var(--text-primary);
     font-weight: 400;
     font-size: 16px;
-    color: var(--text-primary);
   }
 
   &__btn {
-    background-color: var(--component-btn-hover);
-    border: none;
     padding: 5px 5px 0px 5px;
+
+    background-color: var(--component-btn-hover);
     &::before {
       content: url('/../public/icons/Vector_2.png');
       vertical-align: middle;
-      cursor: pointer;
       padding-right: 7px;
     }
   }

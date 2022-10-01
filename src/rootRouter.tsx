@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router'
 
 import { paths } from 'constants/path'
-import { Create, Homepage, Login, Selections } from 'pages'
+import { CreateWatchlist, Homepage, FormLogin, SelectionList } from 'pages'
 
 export const RootRouter: React.FC = (): JSX.Element => {
   const routes = useRoutes([
@@ -11,15 +11,15 @@ export const RootRouter: React.FC = (): JSX.Element => {
     },
     {
       path: paths.login,
-      element: <Login />
+      element: <FormLogin />
     },
     {
       path: paths.selections,
-      element: <Selections />
+      element: <SelectionList />
     },
     {
       path: paths.create,
-      element: <Create />
+      element: <CreateWatchlist />
     }
   ])
 

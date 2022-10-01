@@ -6,7 +6,7 @@ import { listReducer } from './MovieListReducer'
 import { MovieList, MovieListContext, MovieListState } from './MovieListContext'
 
 const INITIAL_STATE: MovieListState = {
-  list: localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list') || '{}') : []
+  movieList: localStorage.getItem('movieList') ? JSON.parse(localStorage.getItem('movieList') || '{}') : []
 }
 
 type Props = {
@@ -17,11 +17,11 @@ export const MovieListProvider: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(listReducer, INITIAL_STATE)
 
   useEffect(() => {
-    localStorage.setItem('list', JSON.stringify(state.list))
+    localStorage.setItem('movieList', JSON.stringify(state.movieList))
   }, [state])
 
-  const addList = (list: MovieList) => {
-    dispatch({ type: 'ADD_LIST', payload: list })
+  const addList = (movieList: MovieList) => {
+    dispatch({ type: 'ADD_LIST', payload: movieList })
   }
 
   const addMovie = (movie: MovieItem, name: string) => {
@@ -38,7 +38,7 @@ export const MovieListProvider: FC<Props> = ({ children }) => {
 
   return (
     <MovieListContext.Provider
-      value={{ list: state.list, addList, addMovie, deleteMovieFromWatchlist, deleteWatchlist }}
+      value={{ movieList: state.movieList, addList, addMovie, deleteMovieFromWatchlist, deleteWatchlist }}
     >
       {children}
     </MovieListContext.Provider>

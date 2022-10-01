@@ -14,27 +14,30 @@
 }
 
 .Content {
-  height: 100%;
-  background-color: var(--bg-main);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   padding: 50px 60px 0px 60px;
 
+  background-color: var(--bg-main);
+  
   &__info {
     display: inline-block;
-    background-color: var(--bg-secondary);
     padding: 20px;
+    margin-bottom: 40px;
+
+    background-color: var(--bg-secondary);
     border: 1px solid var(--component-border-info);
     border-radius: var(--border-radius-s);
-    margin-bottom: 40px;
   }
 
   &__info-watchlists {
+    margin-bottom: 35px;
+
     color: var(--text-primary);
     font-weight: 400;
     font-size: 40px;
-    margin-bottom: 35px;
 
     &_colorRed {
       color: var(--text-logo);
@@ -42,10 +45,11 @@
   }
 
   &__text {
+    margin-bottom: 7px;
+
     color: var(--text-primary);
     font-weight: 400;
     font-size: 20px;
-    margin-bottom: 7px;
 
     &_iconVector {
       @include icon();
@@ -71,9 +75,8 @@
 
 .input-box {
   background-color: var(--component-btn-default);
-  border-radius: var(--border-radius-xs);
   border: 1px solid var(--component-border-default);
-
+  border-radius: var(--border-radius-xs);
   &::before {
     content: url('/../public/icons/search.png');
     margin: 0px 10px;
@@ -82,39 +85,46 @@
 
   &__input {
     @include font-parametrs();
-    background-color: var(--component-btn-default);
-    border: none;
-    color: var(--text-placeholder);
+
     height: 43px;
     width: 90%;
-    outline: none;
+
+    background-color: var(--component-btn-default);
+    color: var(--text-placeholder);
   }
 
   &__btn {
     @include font-parametrs();
-    background-color: var(--component-btn-secondary);
-    border: none;
-    border-radius: var(--border-radius-xs);
-    height: 43px;
     position: absolute;
     top: 0;
     right: 0;
     min-width: 91px;
+    height: 43px;
+
+    background-color: var(--component-btn-secondary);
+    border-radius: var(--border-radius-xs);
     color: var(--text-search);
-    cursor: pointer;
   }
 }
 
 .posters {
-  font-family: 'Lato';
-  font-weight: 400;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  font-family: 'Lato';
+  font-weight: 400;
+
   &-text {
-    font-size: 32px;
-    color: var(--text-primary);
     margin-top: 40px;
+
+    color: var(--text-primary);
+    font-size: 32px;
   }
+}
+
+.errorText {
+  color: var(--text-logo);
+  font-family: 'Lato';
+  font-weight: 400;
 }

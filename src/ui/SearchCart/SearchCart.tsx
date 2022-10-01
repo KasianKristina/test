@@ -16,15 +16,19 @@ type MovieProps = {
   poster_path: string
 }
 
-export const SearchCart: FC<MovieProps> = memo(function ({ title, poster_path, id, overview, genres, popularity }) {
+const _SearchCart: FC<MovieProps> = ({ title, poster_path, id, overview, genres, popularity }) => {
   const [modalOpen, setModalOpen] = useState(false)
+
+  const isModalOpen = (isOpen:boolean) => {
+    setModalOpen(isOpen)
+  }
 
   return (
     <div className={styles.SearchCart}>
-      <img className={styles.SearchCart__poster} src={API_IMG + poster_path} alt="Movie poster"></img>
+      <img className={styles.SearchCart__poster} src={API_IMG + poster_path} alt="Movie poster"/>
       <div>
         <p className={styles.SearchCart__title}>{title}</p>
-        <button className={styles.SearchCart__btn} onClick={() => setModalOpen(true)}>
+        <button className={styles.SearchCart__btn} onClick={() => isModalOpen(true)}>
           Add to watchlist
         </button>
         <Modal modalOpen={modalOpen}>
@@ -41,4 +45,6 @@ export const SearchCart: FC<MovieProps> = memo(function ({ title, poster_path, i
       </div>
     </div>
   )
-})
+}
+
+export const SearchCart = memo(_SearchCart)

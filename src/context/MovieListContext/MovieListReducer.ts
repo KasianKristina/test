@@ -2,8 +2,8 @@ import { MovieItem } from 'services'
 
 import { MovieList } from './MovieListContext'
 
-type ListState = {
-  list: MovieList[]
+type movieListState = {
+  movieList: MovieList[]
 }
 
 type MovieProps = {
@@ -11,23 +11,23 @@ type MovieProps = {
   name: string
 }
 
-type ListAction =
+type MovieListAction =
   | { type: 'ADD_LIST'; payload: MovieList }
   | { type: 'ADD_MOVIE_TO_WATCHLIST'; payload: MovieProps }
   | { type: 'DELETE_MOVIE_FROM_WATCHLIST'; payload: MovieProps }
   | { type: 'DELETE_LIST'; payload: string }
 
-export const listReducer = (state: ListState, action: ListAction) => {
+export const listReducer = (state: movieListState, action: MovieListAction) => {
   switch (action.type) {
     case 'ADD_LIST':
       return {
         ...state,
-        list: [action.payload, ...state.list]
+        movieList: [action.payload, ...state.movieList]
       }
 
     case 'ADD_MOVIE_TO_WATCHLIST':
       const name = action.payload.name
-      const newState: MovieList[] = state.list.reduce((prev, cur) => {
+      const newState: MovieList[] = state.movieList.reduce((prev, cur) => {
         if (cur.title === name) {
           cur.watchlist.push(action.payload.movie)
         }
@@ -41,7 +41,7 @@ export const listReducer = (state: ListState, action: ListAction) => {
     case 'DELETE_MOVIE_FROM_WATCHLIST':
       const titleList = action.payload.name
       const titleMovie = action.payload.movie.title
-      const newStateList: MovieList[] = state.list.reduce((prev, cur) => {
+      const newStateMovieList: MovieList[] = state.movieList.reduce((prev, cur) => {
         if (cur.title === titleList) {
           const index = cur.watchlist.findIndex((el) => el.title === titleMovie)
           cur.watchlist.splice(index, 1)
@@ -50,13 +50,13 @@ export const listReducer = (state: ListState, action: ListAction) => {
       }, [])
       return {
         ...state,
-        movie: newStateList
+        movie: newStateMovieList
       }
 
     case 'DELETE_LIST':
       return {
         ...state,
-        list: state.list.filter((item) => item.title !== action.payload)
+        movieList: state.movieList.filter((item) => item.title !== action.payload)
       }
 
     default:

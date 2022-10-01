@@ -5,29 +5,29 @@ import { MovieListContext } from 'context/MovieListContext/MovieListContext'
 
 import styles from './styles.module.scss'
 
-export const SelectionList: FC = memo(function () {
-  const { list, deleteWatchlist } = useContext(MovieListContext)
+export const _SelectionList: FC = () => {
+  const { movieList, deleteWatchlist } = useContext(MovieListContext)
 
   return (
     <div className={styles.SelectionList}>
       <div className={styles.SelectionList__wrapper}>
-        {Array.from(list).map((l) => (
+        {movieList.map((watchlist) => (
           <div>
             <div className={styles.SelectionList__header}>
-              <p className={styles.SelectionList__title}>{l.title}</p>
+              <p className={styles.SelectionList__title}>{watchlist.title}</p>
               <button
                 className={styles.SelectionList__btn_remove}
                 onClick={() => {
-                  deleteWatchlist(l.title)
+                  deleteWatchlist(watchlist.title)
                 }}
               >
                 Delete list
               </button>
             </div>
-            <p className={styles.SelectionList__overview}>{l.overview}</p>
+            <p className={styles.SelectionList__overview}>{watchlist.overview}</p>
             <div>
-              {l.watchlist.map((movie) => (
-                <SelectionCart key={movie.id} {...movie} listTitle={l.title} type="watchlist" />
+              {watchlist.watchlist.map((movie) => (
+                <SelectionCart key={movie.id} {...movie} listTitle={watchlist.title} type="watchlist" />
               ))}
             </div>
             <div className={styles.SelectionList__line}></div>
@@ -36,4 +36,6 @@ export const SelectionList: FC = memo(function () {
       </div>
     </div>
   )
-})
+}
+
+export const SelectionList = memo(_SelectionList)

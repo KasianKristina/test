@@ -12,29 +12,30 @@
   }
 
   &__title {
+    margin-bottom: 16px;
+
+    color: var(--text-primary);
     font-family: 'Lato';
     font-weight: 700;
     font-size: 38px;
-    color: var(--text-primary);
-    margin-bottom: 16px;
   }
 
   &__overview {
+    color: var(--text-primary);
     font-family: 'Lato';
     font-weight: 400;
     font-size: 16px;
-    color: var(--text-primary);
   }
 
   &__btn_remove {
+    color: var(--component-btn-secondary);
     font-family: 'Lato';
     font-weight: 700;
     font-size: 16px;
-    color: var(--component-btn-secondary);
   }
 
   &__line {
-    border-bottom: 1px solid var(--component-border-default);
     margin-top: 50px;
+    border-bottom: 1px solid var(--component-border-default);
   }
 }

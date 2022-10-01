@@ -16,7 +16,7 @@ type MovieProps = {
   genres: string
 }
 
-export const Movie: FC<MovieProps> = memo(function ({ title, poster_path, id, overview, popularity, genres }) {
+const _Movie: FC<MovieProps> = ({ title, poster_path, id, overview, popularity, genres }) => {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
@@ -40,4 +40,6 @@ export const Movie: FC<MovieProps> = memo(function ({ title, poster_path, id, ov
       </Modal>
     </div>
   )
-})
+}
+
+export const Movie = memo(_Movie)

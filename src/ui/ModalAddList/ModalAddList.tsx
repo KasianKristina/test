@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import { FC, memo, useContext } from 'react'
 
 import { MovieListContext } from 'context/MovieListContext/MovieListContext'
 
@@ -14,8 +14,8 @@ type Props = {
   genres: string
 }
 
-export const ModalAddList: FC<Props> = ({ setModalOpen, title, poster_path, id, overview, popularity, genres }) => {
-  const { list, addMovie } = useContext(MovieListContext)
+export const _ModalAddList: FC<Props> = ({ setModalOpen, title, poster_path, id, overview, popularity, genres }) => {
+  const { movieList, addMovie } = useContext(MovieListContext)
 
   return (
     <div className={styles.ModalAddList}>
@@ -23,7 +23,7 @@ export const ModalAddList: FC<Props> = ({ setModalOpen, title, poster_path, id, 
       <p className={styles.ModalAddList__text}>Add movie: {title}</p>
       <p className={styles.ModalAddList__text}>To watchlist</p>
       <div className={styles.ModalAddList__list}>
-        {Array.from(list).map((selection) => (
+        {movieList.map((selection) => (
           <button
             className={styles.ModalAddList__listItems}
             onClick={() => {
@@ -37,3 +37,5 @@ export const ModalAddList: FC<Props> = ({ setModalOpen, title, poster_path, id, 
     </div>
   )
 }
+
+export const ModalAddList = memo(_ModalAddList)

@@ -1,5 +1,4 @@
 .SelectionCart {
-  
   display: flex;
 
   &__poster {
@@ -16,10 +15,11 @@
   }
 
   &__title {
+    margin: 30px 0px 0px 0px;
+
     font-family: 'Lato';
     font-size: 28px;
     font-weight: 400;
-    margin: 30px 0px 0px 0px;
   }
 
   &__overview {
@@ -30,12 +30,13 @@
   &__btn_remove {
     width: 77px;
     height: 41px;
+
+    background-color: var(--component-btn-remove);
     border: 1px solid var(--component-btn-secondary);
     border-radius: var(--border-radius-xxs);
-    background-color: var(--component-btn-remove);
+    color: var(--text-primary);
     font-family: 'Lato';
     font-weight: 400;
     font-size: 16px;
-    color: var(--text-primary);
   }
 }

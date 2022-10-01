@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, memo, useState } from 'react'
 
 import styles from './styles.module.scss'
 
@@ -8,9 +8,17 @@ const handleClick = (password: string, name: string) => {
   window.localStorage.setItem('name', name)
 }
 
-export const FormLogin: FC = () => {
+export const _FormLogin: FC = () => {
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+
+  const handlerSetValueName = (name: string) => {
+    setName(name)
+  }
+
+  const handlerSetValuePassword = (password: string) => {
+    setPassword(password)
+  }
 
   return (
     <div className={styles.FormLogin}>
@@ -26,16 +34,16 @@ export const FormLogin: FC = () => {
             <p className={styles['FormLogin__form-container_text']}>Name *</p>
             <input
               className={styles['FormLogin__form-container_input']}
-              onChange={(e) => setName(e.target.value)}
-            ></input>
+              onChange={(e) => handlerSetValueName(e.target.value)}
+            />
           </div>
 
           <div className={styles['FormLogin__form-container']}>
             <p className={styles['FormLogin__form-container_text']}>Password *</p>
             <input
               className={styles['FormLogin__form-container_input']}
-              onChange={(e) => setPassword(e.target.value)}
-            ></input>
+              onChange={(e) => handlerSetValuePassword(e.target.value)}
+            />
           </div>
 
           <button className={styles['FormLogin__form-btn']} onClick={() => handleClick(password, name)}>
@@ -46,3 +54,5 @@ export const FormLogin: FC = () => {
     </div>
   )
 }
+
+export const FormLogin = memo(_FormLogin)

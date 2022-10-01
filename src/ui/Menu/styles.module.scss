@@ -1,22 +1,22 @@
 @import 'global-styles/index.scss';
 
 @mixin btn() {
+  min-width: 247px;
+  min-height: 41px;
+
   font-family: 'Lato';
   font-size: 16px;
   border-radius: var(--border-radius-xs);
-  min-width: 247px;
-  min-height: 41px;
-  cursor: pointer;
-  text-decoration: none;
 }
 
 @mixin btn_default() {
   @include btn();
-  font-weight: 400;
-  background-color: var(--component-btn-default);
-  text-align: left;
-  color: var(--text-primary);
   padding: 10px 0px 10px 12px;
+
+  text-align: left;
+  background-color: var(--component-btn-default);
+  color: var(--text-primary);
+  font-weight: 400;
   &:hover {
     background-color: var(--component-btn-hover);
   }
@@ -31,10 +31,11 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-menu);
   justify-content: space-between;
   padding-top: 30px;
   padding-left: 20px;
+
+  background-color: var(--bg-menu);
 
   &__container {
     min-height: 200px;
@@ -50,17 +51,18 @@
   }
 
   &__logo {
-    font-family: 'Archivo';
+    align-self: center;
+
     color: var(--text-logo);
+    font-family: 'Archivo';
     font-weight: 800;
     font-size: 40px;
-    align-self: center;
   }
 
   &__input-box {
+    align-self: center;
     min-width: 247px;
     height: 35px;
-    align-self: center;
   }
 
   &__btn_home {
@@ -79,11 +81,12 @@
 
   &__btn_create {
     @include btn();
-    text-align: center;
     padding-top: 10px;
-    font-weight: 700;
-    color: var(--text-btn);
+
+    text-align: center;
     background-color: var(--component-btn-secondary);
+    color: var(--text-btn);
+    font-weight: 700;
     &:hover {
       background-color: var(--component-btn-secondary-hover);
     }
@@ -94,50 +97,51 @@
   }
 
   &__list {
+    text-align: left;
+    color: var(--text-secondary);
     font-family: 'Lato';
     font-weight: 400;
-    color: var(--text-secondary);
     font-size: 20px;
-    text-align: left;
 
     &_items {
       overflow-y: auto;
     }
 
     &Items {
+      margin-top: 5px;
+
+      color: var(--text-primary);
       font-family: 'Lato';
       font-weight: 400;
       font-size: 16px;
-      color: var(--text-primary);
-      margin-top: 5px;
     }
   }
 
   &__guest {
-    font-family: 'Roboto';
+    width: 247px;
+    height: 44px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 6px 0px 6px 10px;
+
+    text-align: left;
     background-color: var(--component-btn-default);
     border: 1px solid var(--component-border-guest);
     border-radius: var(--border-radius-xxs);
+    font-family: 'Roboto';
     color: var(--text-primary);
-    padding: 6px 0px 6px 10px;
-    width: 247px;
-    height: 44px;
-    text-align: left;
-    text-decoration: none;
     &::before {
       content: url('/../public/icons/avatar.png');
       vertical-align: middle;
       padding-right: 10px;
     }
-    margin-bottom: 30px;
-    margin-top: 30px;
   }
 }
 
 .input-box {
   background-color: var(--component-btn-default);
-  border-radius: var(--border-radius-xs);
   border: 1px solid var(--component-border-default);
+  border-radius: var(--border-radius-xs);
   &::before {
     content: url('/../public/icons/search.png');
     margin: 0px 10px;
@@ -145,14 +149,14 @@
   }
 
   &__input {
+    min-width: 197px;
+    height: 32px;
+
+    text-align: left;
+    background-color: var(--component-btn-default);
+    color: var(--text-placeholder);
     font-family: 'Lato';
     font-weight: 400;
     font-size: 16px;
-    background-color: var(--component-btn-default);
-    border: none;
-    text-align: left;
-    color: var(--text-placeholder);
-    min-width: 197px;
-    height: 32px;
   }
 }

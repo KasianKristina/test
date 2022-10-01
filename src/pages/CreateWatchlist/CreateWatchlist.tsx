@@ -23,7 +23,7 @@ export const CreateWatchlist: FC = () => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-          ></input>
+          />
         </div>
         <div className={classnames(styles.CreateWatchlist__input, styles.description)}>
           <p className={styles.CreateWatchlist__inputHeader}>Description</p>
@@ -31,7 +31,7 @@ export const CreateWatchlist: FC = () => {
             className={classnames(styles.CreateWatchlist__inputName, styles.inputDescription)}
             value={overview}
             onChange={(e) => setOverview(e.target.value)}
-          ></textarea>
+          />
         </div>
         <button
           className={styles.CreateWatchlist__btn}

@@ -1,41 +1,41 @@
 .ModalAddList {
-
   margin: 15px 25px 0px 25px;
 
   &__text {
+    margin-bottom: 10px;
+
+    color: var(--text-primary);
     font-family: 'Lato';
     font-weight: 700;
     font-size: 16px;
-    color: var(--text-primary);
-    margin-bottom: 10px;
   }
 
   &__btnClose {
-    background-color: var(--component-modal);
-    border: none;
     float: right;
+
+    background-color: var(--component-modal);
     &::after {
       content: url('/../public/icons/Fill.png');
     }
   }
 
   &__list {
+    width: 247px;
     display: flex;
     flex-direction: column;
-    width: 247px;
   }
 
   &__listItems {
+    cursor: pointer;
+    height: 41px;
+    margin-bottom: 5px;
+
     background-color: var(--component-btn-default);
     border-radius: var(--border-radius-xs);
+    color: var(--text-primary);
     font-family: 'Lato';
     font-weight: 400;
     font-size: 16px;
-    color: var(--text-primary);
-    height: 41px;
-    margin-bottom: 5px;
-    cursor: pointer;
-  
     &:hover {
       background-color: var(--component-btn-hover);
     }

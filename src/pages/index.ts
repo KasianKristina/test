@@ -1,4 +1,4 @@
-export { Selections } from './Selections'
-export { Login } from './Login'
+export { SelectionList } from './SelectionList'
+export { FormLogin } from './FormLogin'
 export { Homepage } from './Homepage'
-export { Create } from './Create'
+export { CreateWatchlist } from './CreateWatchlist'

@@ -9,15 +9,15 @@
   }
 
   &__text {
-    margin: 30px;
     height: 114px;
     max-width: 450px;
+    margin: 30px;
 
     &-info {
+      color: var(--text-primary);
       font-family: 'Lato';
       font-weight: 300;
       font-size: 32px;
-      color: var(--text-primary);
     }
   }
 
@@ -32,38 +32,40 @@
       margin-bottom: 52px;
 
       &_text {
+        margin-bottom: 8px;
+
         color: var(--text-primary);
         font-family: 'Lato';
         font-weight: 700;
         font-size: 20px;
-        margin-bottom: 8px;
       }
 
       &_input {
+        height: 45px;
+        min-width: 349px;
+
         background-color: var(--bg-main);
         border: 1px solid var(--text-primary);
         border-radius: var(--border-radius-xxs);
-        height: 45px;
-        min-width: 349px;
       }
     }
 
     &-btn {
+      min-width: 247px;
+      height: 41px;
+
       background-color: var(--component-btn-secondary);
       border-radius: var(--border-radius-xs);
-      border: none;
       color: var(--text-btn);
       font-family: 'Lato';
       font-weight: 700;
       font-size: 18px;
-      height: 41px;
-      min-width: 247px;
-      cursor: pointer;
     }
   }
 
   &__link {
     margin-top: 15px;
+    
     color: var(--text-logo);
     font-family: 'Lato';
     font-weight: 700;

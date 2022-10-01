@@ -16,7 +16,13 @@ export const ContentFilms: FC = () => {
   }, [])
 
   if (error) {
-    return <div>Ошибка: {error}</div>
+    return (
+      <>
+        <p className={styles.errorText}>Uh-oh</p>
+        <p className={styles.errorText}>Something went wrong</p>
+        <div className={styles.errorText}>Error: {error}</div>
+      </>
+    )
   } else if (isLoading) {
     return <div>Загрузка...</div>
   } else {
