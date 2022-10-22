@@ -1,0 +1,74 @@
+@import 'global-styles/index.scss';
+
+.FormLogin {
+  height: 100vh;
+  background-color: var(--bg-main);
+
+  &__wrapper {
+    padding: 40px;
+  }
+
+  &__text {
+    height: 114px;
+    max-width: 450px;
+    margin: 30px;
+
+    &-info {
+      color: var(--text-primary);
+      font-family: 'Lato';
+      font-weight: 300;
+      font-size: 32px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    top: 30%;
+
+    &-container {
+      margin-bottom: 52px;
+
+      &_text {
+        margin-bottom: 8px;
+
+        color: var(--text-primary);
+        font-family: 'Lato';
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      &_input {
+        height: 45px;
+        min-width: 349px;
+
+        background-color: var(--bg-main);
+        border: 1px solid var(--text-primary);
+        border-radius: var(--border-radius-xxs);
+      }
+    }
+
+    &-btn {
+      min-width: 247px;
+      height: 41px;
+
+      background-color: var(--component-btn-secondary);
+      border-radius: var(--border-radius-xs);
+      color: var(--text-btn);
+      font-family: 'Lato';
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+
+  &__link {
+    margin-top: 15px;
+    
+    color: var(--text-logo);
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 18px;
+  }
+}

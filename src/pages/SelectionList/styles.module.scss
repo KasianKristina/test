@@ -1,0 +1,41 @@
+.SelectionList {
+  height: 100%;
+  background-color: var(--bg-main);
+
+  &__wrapper {
+    padding: 40px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    color: var(--text-primary);
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 38px;
+  }
+
+  &__overview {
+    color: var(--text-primary);
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__btn_remove {
+    color: var(--component-btn-secondary);
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__line {
+    margin-top: 50px;
+    border-bottom: 1px solid var(--component-border-default);
+  }
+}

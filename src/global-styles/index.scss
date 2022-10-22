@@ -1,0 +1,12 @@
+@import './_fonts.scss', './variables';
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  background-color: #000;
+  height: 100vh;
+}
+
+#__root {
+  height: 100%;
+}

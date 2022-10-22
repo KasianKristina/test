@@ -1,0 +1,31 @@
+@import 'global-styles/index.scss';
+
+.Movie {
+  width: 170px;
+  height: 330px;
+  margin: 15px 12px;
+
+  background-color: var(--component-btn-hover);
+
+  &__poster {
+    width: 170px;
+    height: 255px;
+  }
+
+  &__title {
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__btn {
+    padding: 5px 5px 0px 5px;
+
+    background-color: var(--component-btn-hover);
+    &::before {
+      content: url('/../public/icons/Vector_2.png');
+      vertical-align: middle;
+      padding-right: 7px;
+    }
+  }
+}

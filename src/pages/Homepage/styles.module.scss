@@ -1,0 +1,130 @@
+@import 'global-styles/index.scss';
+
+@mixin icon() {
+  &::after {
+    padding: 0px 10px;
+    vertical-align: middle;
+  }
+}
+
+@mixin font-parametrs() {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 50px 60px 0px 60px;
+
+  background-color: var(--bg-main);
+  
+  &__info {
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 40px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--component-border-info);
+    border-radius: var(--border-radius-s);
+  }
+
+  &__info-watchlists {
+    margin-bottom: 35px;
+
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 40px;
+
+    &_colorRed {
+      color: var(--text-logo);
+    }
+  }
+
+  &__text {
+    margin-bottom: 7px;
+
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 20px;
+
+    &_iconVector {
+      @include icon();
+      &::after {
+        content: url('/../public/icons/Vector.png');
+      }
+    }
+
+    &_iconCheck {
+      @include icon();
+      &::after {
+        content: url('/../public/icons/check.png');
+      }
+    }
+  }
+
+  &__input-box {
+    position: relative;
+    width: 100%;
+    height: 45px;
+  }
+}
+
+.input-box {
+  background-color: var(--component-btn-default);
+  border: 1px solid var(--component-border-default);
+  border-radius: var(--border-radius-xs);
+  &::before {
+    content: url('/../public/icons/search.png');
+    margin: 0px 10px;
+    vertical-align: middle;
+  }
+
+  &__input {
+    @include font-parametrs();
+
+    height: 43px;
+    width: 90%;
+
+    background-color: var(--component-btn-default);
+    color: var(--text-placeholder);
+  }
+
+  &__btn {
+    @include font-parametrs();
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 91px;
+    height: 43px;
+
+    background-color: var(--component-btn-secondary);
+    border-radius: var(--border-radius-xs);
+    color: var(--text-search);
+  }
+}
+
+.posters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: 'Lato';
+  font-weight: 400;
+
+  &-text {
+    margin-top: 40px;
+
+    color: var(--text-primary);
+    font-size: 32px;
+  }
+}
+
+.errorText {
+  color: var(--text-logo);
+  font-family: 'Lato';
+  font-weight: 400;
+}

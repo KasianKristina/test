@@ -1,0 +1,32 @@
+.SearchCart {
+  display: flex;
+  background-color: var(--component-btn-hover);
+
+  &__poster {
+    width: 70px;
+    height: 97px;
+    padding: 10px;
+  }
+
+  &__title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__btn {
+    padding: 5px 5px 0px 5px;
+
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-xxs);
+    font-family: 'Lato';
+    &::before {
+      content: url('/../public/icons/Vector_2.png');
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+  }
+}

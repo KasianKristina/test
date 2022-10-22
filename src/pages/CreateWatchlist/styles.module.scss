@@ -1,0 +1,65 @@
+.CreateWatchlist {
+    height: 100vh;
+    background-color: var(--bg-main);
+  
+    &__wrapper {
+      padding: 40px;
+    }
+  
+    &__header {
+      margin-bottom: 77px;
+
+      color: var(--text-primary);
+      font-family: 'Lato';
+      font-weight: 400;
+      font-size: 32px;
+    }
+  
+    &__inputHeader {
+      color: var(--text-primary);
+      font-family: 'Lato';
+      font-weight: 700;
+      font-size: 18px;
+    }
+  
+    &__inputName {
+      width: 100%;
+
+      background-color: var(--bg-main);
+      border: 1px solid var(--text-primary);
+      border-radius: var(--border-radius-xs);
+    }
+  
+    &__btn {
+      min-width: 247px;
+      height: 41px;
+
+      background-color: var(--component-btn-secondary);
+      border-radius: var(--border-radius-xs);
+      color: var(--text-btn);
+      font-family: 'Lato';
+      font-size: 16px;
+      font-weight: 700;
+      &:hover {
+        background-color: var(--component-btn-secondary-hover);
+      }
+    }
+  }
+  
+  .name {
+    margin-bottom: 57px;
+  }
+  
+  .inputName {
+    height: 45px;
+    margin-top: 5px;
+  }
+  
+  .description {
+    margin-bottom: 30px;
+  }
+  
+  .inputDescription {
+    height: 126px;
+    margin-top: 5px;
+  }
